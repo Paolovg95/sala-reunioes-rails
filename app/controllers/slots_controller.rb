@@ -3,12 +3,14 @@ class SlotsController < ApplicationController
 
   def new
     @slot = Slot.new
+    authorize @slot
   end
 
   def create
     @slot = Slot.create(slot_params)
     @slot.meeting = @meeting
     @slot.user = current_user
+    authorize @slot
 
     if @slot.save
       redirect_to :root
