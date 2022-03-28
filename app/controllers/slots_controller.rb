@@ -13,7 +13,7 @@ class SlotsController < ApplicationController
     @slot.user = current_user
     authorize @slot
     if @slot.save
-      redirect_to :root, notice: "Meeting created"
+      redirect_to :root, notice: "Reunião criada"
     else
       render :new
     end
@@ -26,7 +26,7 @@ class SlotsController < ApplicationController
   def update
     authorize @slot
     if @slot.update(slot_params)
-      redirect_to :root, notice: "Meeting updated"
+      redirect_to root_path, notice: "Reunião atualizada"
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class SlotsController < ApplicationController
   def destroy
     authorize @slot
     @slot.destroy
-    redirect_to :root
+    redirect_to :root, alert: "Reunião deletada"
   end
 
   private
