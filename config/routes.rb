@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root to: "meetings#index"
 
   resources :meetings do
-    resources :slots
+    resources :slots, only: [:new, :create]
   end
+
+  resources :slots, only: [:edit,:update,:destroy]
 
 
 end

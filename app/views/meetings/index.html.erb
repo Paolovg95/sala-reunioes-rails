@@ -18,8 +18,11 @@
           <% if meeting.time == time && meeting.slot == nil %>
             <td  data-bs-toggle="modal" data-bs-target="#exampleModal" ><%= link_to "Disponivel", new_meeting_slot_path(meeting)  %></td>
           <% elsif meeting.time == time && meeting.slot != nil %>
-            <td>Reservado por
-              <strong><%= link_to "#{meeting.slot.user.first_name}", meeting_path(meeting)%></strong>
+            <td>Reservado para
+              <strong><%= meeting.slot.user.first_name %></strong>
+                <%= link_to meeting_path(meeting) do %>
+                  <i class="fa fa-undo" aria-hidden="true"></i>
+                <% end %>
             </td>
           <% end %>
         <% end %>
