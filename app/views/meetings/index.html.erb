@@ -16,7 +16,7 @@
         <th id="row-<%=time%>"><%="#{time}:00"%></th>
         <% @meetings.each do |meeting| %>
           <% if meeting.time == time && meeting.slot == nil %>
-            <td><%= link_to "Disponivel", new_meeting_slot_path(meeting)  %></td>
+            <td  data-bs-toggle="modal" data-bs-target="#exampleModal" ><%= link_to "Disponivel", new_meeting_slot_path(meeting)  %></td>
           <% elsif meeting.time == time && meeting.slot != nil %>
             <td>Reservado por
               <strong><%= link_to "#{meeting.slot.user.first_name}", meeting_path(meeting)%></strong>
