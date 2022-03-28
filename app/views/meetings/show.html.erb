@@ -4,34 +4,39 @@
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
         <% slot = @meeting.slot %>
-        <h3>Meeting by <strong><%= slot.user.first_name %></strong></h3>
+        <h3>Reunião by <strong><%= slot.user.first_name %></strong></h3>
         <div class="mb-3">
-          <label for="formGroupExampleInput" class="form-label">Title</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="<%= @meeting.slot.title  %>">
+          <label for="formGroupExampleInput" class="form-label">Título da Reunião:</label>
+          <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput" value="<%= @meeting.slot.title  %>">
         </div>
         <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Description</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="<%= @meeting.slot.description  %>">
+          <label for="formGroupExampleInput2" class="form-label">Descrição</label>
+          <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput2" value="<%= @meeting.slot.description  %>">
         </div>
         <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Duration</label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="<%= @meeting.slot.length%>min">
+          <label for="formGroupExampleInput2" class="form-label">Duração (min)</label>
+          <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput2" value="<%= @meeting.slot.length%>min">
         </div>
           <% if @meeting.slot.user == current_user %>
 
             <button type="button" class="btn btn-outline-warning btn-sm">
-              <%= link_to "Edit", edit_slot_path(slot), class: "btn" %>
+              <%= link_to "Editar", edit_slot_path(slot), class: "btn text-seondary" %>
             </button>
 
             <button type="button" class="btn btn-outline-danger btn-sm">
-              <%= link_to "Delete", slot_path(slot),class: "btn",
+              <%= link_to "Deletar", slot_path(slot),class: "btn",
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
             </button>
 
-            <%= link_to "Back", root_path %>
+            <%= link_to root_path, class: "link-voltar" do %>
+              <h5 class="mt-4">Voltar<i class="fa fa-arrow-left" aria-hidden="true"></i></h5>
+            <% end %>
           <% else %>
-            <%= link_to "Back", root_path %>
+            <%= link_to root_path do %>
+            Voltar
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <% end %>
           <% end %>
       </div>
     </div>

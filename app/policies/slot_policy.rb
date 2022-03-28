@@ -14,6 +14,6 @@ class SlotPolicy < ApplicationPolicy
   end
 
   def destroy?
-
+    user == record.user
   end
 end
