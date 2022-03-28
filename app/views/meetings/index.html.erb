@@ -13,12 +13,14 @@
   <tbody>
     <% Meeting::TIMES.each do |time| %>
       <tr>
-        <th id="row-<%=time%>"><%= "#{time}" %></th>
+        <th id="row-<%=time%>"><%="#{time}:00"%></th>
         <% @meetings.each do |meeting| %>
           <% if meeting.time == time && meeting.slot == nil %>
             <td><%= link_to "Disponivel", new_meeting_slot_path(meeting)  %></td>
           <% elsif meeting.time == time && meeting.slot != nil %>
-            <td><%= link_to " Reservado por #{meeting.slot.user.email}", meeting_path(meeting)  %></td>
+            <td>Reservado por
+              <strong><%= link_to "#{meeting.slot.user.first_name}", meeting_path(meeting)%></strong>
+            </td>
           <% end %>
         <% end %>
       </tr>
