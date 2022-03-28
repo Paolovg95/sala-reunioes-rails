@@ -5,11 +5,15 @@ class SlotPolicy < ApplicationPolicy
     end
   end
 
-  # def new?
-  #   true
-  # end
-
   def create?
     true
+  end
+
+  def update?
+    user == record.user
+  end
+
+  def destroy?
+
   end
 end
