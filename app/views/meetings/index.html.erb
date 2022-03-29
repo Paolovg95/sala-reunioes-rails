@@ -16,12 +16,12 @@
         <th id="row-<%=time%>"><%="#{time}:00"%></th>
         <% @meetings.each do |meeting| %>
           <% if meeting.time == time && meeting.slot == nil %>
-            <td><%= link_to "Disponivel", new_meeting_slot_path(meeting), class:'bg-transparent' %></td>
+            <td><%= link_to "Disponivel", new_meeting_slot_path(meeting),class:'bg-transparent' %></td>
           <% elsif meeting.time == time && meeting.slot != nil %>
             <td>Reservado para
               <strong><%= meeting.slot.user.first_name%></strong>
                 <%= link_to meeting_path(meeting) do %>
-                <i class="fa fa-undo bg-transparent" aria-hidden="true"></i>
+                  <i class="fa fa-undo bg-transparent"></i>
                 <% end %>
             </td>
           <% end %>

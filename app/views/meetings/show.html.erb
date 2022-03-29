@@ -17,6 +17,10 @@
           <label for="formGroupExampleInput2" class="form-label">Duração (min)</label>
           <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput2" value="<%= @meeting.slot.length%>min">
         </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Criado em</label>
+          <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput2" value="<%= @meeting.slot.created_at%>">
+        </div>
           <% if @meeting.slot.user == current_user %>
 
             <button type="button" class="btn btn-outline-warning btn-sm">
@@ -25,7 +29,7 @@
 
             <button type="button" class="btn btn-outline-danger btn-sm">
               <%= link_to "Deletar", slot_path(slot),class: "btn",
-                  method: :delete,
+                  method: :delete, remote: true,
                   data: { confirm: "Are you sure?" } %>
             </button>
 
