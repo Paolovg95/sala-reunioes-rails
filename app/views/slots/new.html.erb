@@ -2,15 +2,13 @@
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
-        <h3>Crie sua Reunião</h3>
-        <div data-controller="insert-into-table">
-          <%= simple_form_for([@meeting,@slot], data: {insert_into_table_target: 'form'}) do |f| %>
-            <%= f.input :title, label: "Título da Reunião" %>
-            <%= f.input :description, label: "Descrição"%>
-            <%= f.input :length, label: "Duração (min)", as: :radio_buttons, collection: [15,30,45,60] %>
-            <%= f.button :submit, 'Criar' ,class: 'btn btn-success'%>
-          <% end %>
-        </div>
+        <h3>Criar sua Reunião</h3>
+        <%= simple_form_for([@meeting,@slot]) do |f| %>
+          <%= f.input :title, label: "Título da Reunião" %>
+          <%= f.input :description, label: "Descrição"%>
+          <%= f.input :length, label: "Duração (min)", as: :radio_buttons, collection: [15,30,45,60] %>
+          <%= f.button :submit, 'Criar' ,class: 'btn btn-success'%>
+        <% end %>
       </div>
     </div>
   </div>
