@@ -13,7 +13,7 @@
   <tbody class="table table-striped">
     <% Meeting::TIMES.each do |time| %>
       <tr class="bg-light">
-        <th id="row-<%=time%>"><%="#{time}:00"%></th>
+        <th id="row-meetings"><%="#{time}:00"%></th>
 
         <% @meetings.each do |meeting| %>
           <% if meeting.time == time && meeting.slot == nil %>
