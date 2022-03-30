@@ -1,9 +1,15 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  time: 1
-  day: MyString
-
-two:
-  time: 1
-  day: MyString
+  time: 6
+  day: Segunda
+one:
+  time: 7
+  day: Terca
+one:
+  time: 8
+  day: Quarta
+one:
+  time: 9
+  day: Quinta
+one:
+  time: 10
+  day: Sexta

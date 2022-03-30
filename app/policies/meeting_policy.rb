@@ -1,7 +1,7 @@
 class MeetingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.includes(:meeting_id)
     end
   end
 
