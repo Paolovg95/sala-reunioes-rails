@@ -14,10 +14,9 @@
     <% Meeting::TIMES.each do |time| %>
       <tr class="bg-light">
         <th id="row-meetings"><%="#{time}:00"%></th>
-
         <% @meetings.each do |meeting| %>
           <% if meeting.time == time && meeting.slot == nil %>
-            <td><%= link_to "Disponivel", new_meeting_slot_path(meeting), remote: true %></td>
+            <td><%= link_to "Disponivel", new_meeting_slot_path(meeting)%></td>
           <% elsif meeting.time == time && meeting.slot != nil %>
             <td>Reservado para
               <strong><%= meeting.slot.user.first_name%></strong>
