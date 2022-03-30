@@ -15,6 +15,7 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+gem 'turbo-rails'
 gem "turbolinks_render"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
@@ -26,6 +27,7 @@ gem 'devise'
 gem 'pundit'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'stimulus-rails'
 gem "autoprefixer-rails", "10.2.5"
 gem "font-awesome-sass", "~> 5.6.1"
 gem "simple_form", github: 'heartcombo/simple_form'

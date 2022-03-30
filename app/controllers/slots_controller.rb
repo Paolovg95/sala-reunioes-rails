@@ -5,6 +5,10 @@ class SlotsController < ApplicationController
   def new
     @slot = Slot.new
     authorize @slot
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -13,7 +17,7 @@ class SlotsController < ApplicationController
     @slot.user = current_user
     authorize @slot
     if @slot.save
-      redirect_to :root, notice: "Reunião criada"
+      redirect_to root_path, notice: "Reunião criada"
     else
       render :new
     end
