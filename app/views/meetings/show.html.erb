@@ -2,47 +2,47 @@
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
-        <% slot = @meeting.slot %>
-        <h3>Reunião by <strong><%= slot.user.first_name %></strong></h3>
-        <div class="mb-3">
-          <label for="formGroupExampleInput" class="form-label">Título da Reunião:</label>
-          <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput" value="<%= @meeting.slot.title  %>">
-        </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Descrição</label>
-          <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput2" value="<%= @meeting.slot.description  %>">
-        </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Duração (min)</label>
-          <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput2" value="<%= @meeting.slot.length%>min">
-        </div>
-        <div class="mb-3">
-          <label for="formGroupExampleInput2" class="form-label">Criado em</label>
-          <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput2" value="<%= @meeting.slot.created_at%>">
-        </div>
-          <% if @meeting.slot.user == current_user %>
+  <%# <strong><%= @meeting.slot.user.first_name %>
+          <h1>Reunião by George</h1>
+          <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Título da Reunião:</label>
+            <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput" value="<%= @meeting.slot.title  %>">
+          </div>
 
-            <button type="button" class="btn btn-outline-warning btn-sm">
-              <%= link_to "Editar", edit_slot_path(slot), class: "btn text-seondary" %>
-            </button>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Descrição</label>
+            <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput2" value="<%= @meeting.slot.description  %>">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Duração (min)</label>
+            <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput2" value="<%= @meeting.slot.length%>min">
+          </div>
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Criado em</label>
+            <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput2" value="<%= @meeting.slot.created_at%>">
+          </div>
+            <% if @meeting.slot.user == current_user %>
+              <%# <% binding.pry %>
+              <button type="button" class="btn btn-outline-warning btn-sm">
+                <%= link_to "Editar", edit_slot_path(@meeting.slot), class: "btn text-seondary" %>
+              </button>
+              <button type="button" class="btn btn-outline-danger btn-sm">
+                <%= link_to "Deletar", slot_path(@meeting.slot),class: "btn",
+                    method: :delete, remote: true,
+                    data: { confirm: "Are you sure?" } %>
+              </button>
 
-            <button type="button" class="btn btn-outline-danger btn-sm">
-              <%= link_to "Deletar", slot_path(slot),class: "btn",
-                  method: :delete, remote: true,
-                  data: { confirm: "Are you sure?" } %>
-            </button>
+              <%= link_to root_path, class: "link-voltar" do %>
+                <h5 class="mt-4">Voltar<i class="fa fa-arrow-left" aria-hidden="true"></i></h5>
+              <% end %>
 
-            <%= link_to root_path, class: "link-voltar" do %>
-              <h5 class="mt-4">Voltar<i class="fa fa-arrow-left" aria-hidden="true"></i></h5>
+            <% else %>
+              <%= link_to root_path do %>
+              Voltar
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              <% end %>
             <% end %>
-          <% else %>
-            <%= link_to root_path do %>
-            Voltar
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            <% end %>
-          <% end %>
       </div>
     </div>
   </div>
 </div>
->

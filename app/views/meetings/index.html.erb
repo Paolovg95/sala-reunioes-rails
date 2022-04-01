@@ -13,14 +13,14 @@
   <tbody class="table table-striped">
     <% Meeting::TIMES.each do |time| %>
       <tr class="bg-light">
-        <th id="row-<%=time%>"><%="#{time}:00"%></th>
-
+        <th id="row-meetings"><%="#{time}:00"%></th>
         <% @meetings.each do |meeting| %>
           <% if meeting.time == time && meeting.slot == nil %>
-            <td><%= link_to "Disponivel", new_meeting_slot_path(meeting), remote: true %></td>
-          <% elsif meeting.time == time && meeting.slot != nil %>
-            <td>Reservado para
-              <strong><%= meeting.slot.user.first_name%></strong>
+            <td><%= link_to "Disponivel", new_meeting_slot_path(meeting)%></td>
+          <% elsif meeting.time == time && meeting.slot.user != nil %>
+            <%# <% slot = Slot.find_by(meeting: meeting) %>
+            <td> Reservado para
+              <strong><%= meeting.slot.user.first_name %></strong>
                 <%= link_to meeting_path(meeting) do %>
                   <i class="fa fa-undo bg-transparent"></i>
                 <% end %>
