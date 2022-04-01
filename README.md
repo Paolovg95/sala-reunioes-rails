@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Neste projeto fiz uma simulação de um sistema para agendamento de reuniões. Dando ao Usuário a chance de preencher o Título, Descrição e Duração da reunião na Hora e Dia corretos, que na visão principal podem ser claramente entendidos.
 
-* Ruby version
+O projeto foi construído sobre solicitações AJAX, biblioteca de JavaScript para acelerar a navegação com:
 
-* System dependencies
+**Turbo
+Hotwire 
+Stimulus JS.**
 
-* Configuration
+Com Test Unitários, de Integração e Teste de Sistema usando **Capybara** e **MiniTest**
+Seguindo o TDD, escrevendo um teste com falha, fazendo com que ele passe e finalmente refatore o código
 
-* Database creation
+Para autenticação e autorização do usuário, usei o **Devise** & **Pundit**. Duas poderosas Gemas para gerenciar restrições entre usuários.
 
-* Database initialization
+O layout deste protótipo foi usado com esta arquitetura:
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Ferramentas com uma configuração personalizada, como:
 
-* Deployment instructions
+**Bootstrap (dependência JS: Popper.js)**
+**FontAwesome**
+**Simple Form**
+**Autoprefixer**
+**Stimulus**
+**SCSS**
 
-* ...
+A sequência dos commits pode mostrar o desenvolvimento deste projeto Passo a Passo.
