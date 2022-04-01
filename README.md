@@ -1,4 +1,4 @@
-# README
+# Sala de Reuniãoes
 
 
 Neste projeto fiz uma simulação de um sistema para agendamento de reuniões. Dando ao Usuário a chance de preencher o Título, Descrição e Duração da reunião na Hora e Dia corretos, que na visão principal podem ser claramente entendidos.
