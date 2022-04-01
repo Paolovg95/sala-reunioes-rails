@@ -1,9 +1,9 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-
   test "Not Allow save User without First_Name" do
     user = User.new
+    # user.first_name = "Bob"
     user.email = "whatever@mail.com"
     user.password = "123456"
     assert_not user.save, "Saved"
