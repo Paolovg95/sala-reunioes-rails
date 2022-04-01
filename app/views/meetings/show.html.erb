@@ -3,7 +3,7 @@
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
   <%# <strong><%= @meeting.slot.user.first_name %>
-          <h1>Reunião by George</h1>
+          <h1>Reuniãoes by <%= @meeting.slot.user.first_name %></h1>
           <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Título da Reunião:</label>
             <input type="text" disabled="disabled" class="form-control" id="formGroupExampleInput" value="<%= @meeting.slot.title  %>">
